@@ -1,0 +1,157 @@
+.container {
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-background);
+}
+
+.main {
+  padding: 2rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Max width for content */
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3.5rem; /* Responsive font size */
+  text-align: center;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+}
+
+.neonTitle {
+  color: var(--neon-pink);
+  text-shadow:
+    0 0 7px var(--neon-pink),
+    0 0 10px var(--neon-pink),
+    0 0 21px var(--neon-pink),
+    0 0 42px var(--electric-blue),
+    0 0 82px var(--electric-blue),
+    0 0 92px var(--electric-blue),
+    0 0 102px var(--electric-blue),
+    0 0 151px var(--electric-blue);
+}
+
+.controlsContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--medium-background);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--electric-blue);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+}
+
+.filterLabel {
+  font-size: 1.1rem;
+  color: var(--light-text);
+}
+
+.categorySelect {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--interactive-element);
+  background-color: var(--dark-background);
+  color: var(--light-text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categorySelect:hover, .categorySelect:focus {
+  border-color: var(--interactive-hover);
+  box-shadow: 0 0 8px var(--interactive-hover);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column; /* Stack map and details vertically on small screens */
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.mapContainer {
+  height: 500px; /* Initial height */
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--electric-blue);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+}
+
+.mapLoading {
+  color: var(--light-text);
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+.restaurantDetailsCard {
+  /* Uses .card from globals.css */
+  padding: 1.5rem;
+  color: var(--light-text);
+  max-height: 500px; /* Match map height */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+.neonSubtitle {
+  color: var(--sunset-orange);
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 5px var(--sunset-orange);
+}
+
+.footer {
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid var(--electric-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--medium-background);
+  margin-top: 2rem;
+}
+
+.footer p {
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) { /* Medium screens and up */
+  .contentWrapper {
+    flex-direction: row; /* Map and details side-by-side */
+  }
+  .mapContainer {
+    flex: 2; /* Map takes more space */
+    height: 600px;
+  }
+  .restaurantDetailsCard {
+    flex: 1; /* Details card takes less space */
+    max-height: 600px;
+  }
+  .title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1024px) { /* Large screens */
+  .mapContainer {
+    height: 700px;
+  }
+   .restaurantDetailsCard {
+    max-height: 700px;
+  }
+} 

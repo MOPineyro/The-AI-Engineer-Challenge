@@ -1,0 +1,223 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #1A1A2E; /* Dark Neon Blue/Purple */
+  color: #E0E0E0; /* Light grey for text, good contrast */
+  line-height: 1.6;
+}
+
+a {
+  color: #00FFFF; /* Neon Cyan for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #39FF14; /* Luminous Green for hover */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Tropical Neon Palette (from your frontend-rule) */
+:root {
+  --neon-pink: #FF00FF;
+  --electric-blue: #00BFFF;
+  --luminous-green: #39FF14;
+  --sunset-orange: #FF8C00;
+  --neon-yellow: #FFFF00;
+
+  --dark-background: #1A1A2E; /* Deep Blue/Purple - for primary background */
+  --medium-background: #16213E; /* Slightly lighter for cards/sections */
+  --light-text: #E0E0E0;
+  --accent-text: var(--neon-pink);
+  --interactive-element: var(--electric-blue);
+  --interactive-hover: var(--luminous-green);
+  --highlight-color: var(--sunset-orange);
+  --error-color: #FF4747; /* Neon Red for errors */
+}
+
+/* Basic Layout & App Structure */
+.container {
+  min-height: 100vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-background);
+}
+
+.main-content {
+  padding: 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Constraint for chat-like interface */
+}
+
+.app-header {
+  width: 100%;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-bottom: 2px solid var(--electric-blue);
+  margin-bottom: 2rem;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 2.8rem;
+  color: var(--light-text);
+}
+
+.neon-highlight {
+  color: var(--neon-pink);
+  text-shadow:
+    0 0 5px var(--neon-pink),
+    0 0 10px var(--neon-pink),
+    0 0 15px var(--electric-blue);
+}
+
+.app-footer {
+  width: 100%;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--electric-blue);
+  margin-top: auto; /* Pushes footer to bottom */
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: 2px solid var(--interactive-element);
+  background-color: var(--medium-background);
+  color: var(--light-text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--luminous-green);
+  box-shadow: 0 0 8px var(--luminous-green);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Button Styles */
+.neon-button {
+  background-color: var(--interactive-element);
+  color: var(--dark-background);
+  border: none; /* Remove default border */
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 
+    0 0 5px var(--interactive-element),
+    0 0 10px var(--interactive-element);
+}
+
+.neon-button:hover {
+  background-color: var(--luminous-green);
+  color: var(--dark-background);
+  box-shadow: 
+    0 0 8px var(--luminous-green),
+    0 0 15px var(--luminous-green),
+    0 0 20px var(--luminous-green);
+}
+
+.neon-button:disabled {
+  background-color: #555;
+  color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Card for displaying responses or sections */
+.card {
+  background-color: var(--medium-background);
+  border: 1px solid var(--electric-blue);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+}
+
+.card-title {
+  color: var(--sunset-orange);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 3px var(--sunset-orange);
+}
+
+.error-message {
+  color: var(--error-color);
+  background-color: rgba(255, 71, 71, 0.1);
+  border: 1px solid var(--error-color);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: var(--neon-yellow);
+}
+
+/* Styles for streamed response display */
+.streaming-response {
+  white-space: pre-wrap; /* Preserve whitespace and newlines */
+  word-wrap: break-word; /* Break long words */
+  font-family: monospace; /* Good for streamed text */
+  line-height: 1.5;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px dashed var(--interactive-element);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}

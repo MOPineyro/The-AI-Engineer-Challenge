@@ -11,3 +11,14 @@ alwaysApply: false
 - You should use Next.js as it works best with Vercel. 
 - This frontend will ultimately be deployed on Vercel, but it should be possible to test locally. 
 - Always provide users with a way to run the created UI once you have created it.
+
+### Color Palette: Tropical Neon
+- Prioritize vibrant, high-contrast colors reminiscent of tropical neon aesthetics.
+- Examples include:
+    - Neon Pinks (e.g., #FF00FF, #FF69B4)
+    - Electric Blues (e.g., #00FFFF, #00BFFF)
+    - Luminous Greens (e.g., #39FF14, #ADFF2F)
+    - Sunset Oranges/Yellows (e.g., #FF8C00, #FFFF00)
+- Ensure sufficient contrast between text and background colors for readability, even with bright colors.
+- Use darker, desaturated neon shades for backgrounds or less important elements to make primary content pop.
+- Consider using neon accents sparingly to highlight key actions or information, avoiding overwhelming the user.
